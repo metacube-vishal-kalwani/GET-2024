@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assignment2/Parking.css">
+    <title>Metacube Parking system</title>
+</head>
+
+<body>
+    <header>
+        <div class="topBar">
+            <h1 class="title">
+                Meta <span>Parking</span>
+            </h1>
+            <nav>
+                <ul class="navBar">
+                    <li class="navItem"><a href="#Employee">Add Employee</a></li>
+                    <li class="navItem"><a href="#Vehicle"> Add Vehicle</a></li>
+                    <li class="navItem"><a href="#feedBack">Give feedback</a></li>
+                    <li class="navItem"><a href="#Prices">Pricing</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img src="./Images/1000228110.jpg" class="coverImage" alt="">
+    </header>
+
+    <section id="Employee">
+        <h2>Employee</h2>
+        <hr>
+        <h3>Add Details</h3>
+        <form action="Post">
+            <label for="EmpName">Name</label>
+            <input type="text" name="EmployeeName" id="EmpName" placeholder="Enter Name">
+
+            <label for="EmpGender">Gender</label>
+            <input type="radio" name="EmployeeGender" id="EmpGender" value="Male" />Male
+            <input type="radio" name="EmployeeGender" id="EmpGender" value="Female" />Female
+
+            <label for="EmpEmail">Email</label>
+            <input type="email" id="EmpEmail" name="EmployeeEmail" placeholder="Enter Email">
+
+            <label for="EmpPassword">Password</label>
+            <input type="password" id="EmpPassword" name="EmployeePassword" placeholder="Enter Password">
+
+            <label for="ConfirmPassword">Confirm password</label>
+            <input type="password" id="ConfirmPassword" placeholder="Confirm Password">
+        </form>
+
+    </section>
+
+    <section id="Vehicle">
+        <h2>Vehicle</h2>
+        <hr>
+        <h3>Add Details</h3>
+
+        <form>
+            <label for="VehicleCompany">Vehicle Make</label>
+            <input type="text" id="VehicleCompany" name="VehicleName" placeholder="Enter vehicle's Company">
+
+            <label for="VehicleModel ">Vehicle Model</label>
+            <input type="text" id="VehicleModel" name="VehicleModel" placeholder="Enter vehicle type">
+
+            <label for="VehicleType">Type</label>
+            <input type="text" id="VehicleType" name="VehicleType" placeholder="Enter type">
+
+            <label for="VehicleNumber">Number</label>
+            <input type="number" id="VehicleNumber" placeholder="Number">
+
+            <label for="Employee Id">Employee Id</label>
+            <input type="text" name="EmpId" id="Employee Id" placeholder="Employee ID">
+
+            <label for="Identification">Identification(color ,mark,visible accessories etc)</label>
+            <textarea name="identification" id="Identification" cols="20" rows="5"></textarea>
+        </form>
+
+    </section id="feedBack">
+    <h2>FeedBack</h2>
+    <hr>
+
+    <img src="./Images/Screenshot (3).png" height="80" width="80" alt="">
+
+    <div>
+        <h3>Get in touch</h3>
+        <form action="">
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">send Email -></button>
+        </form>
+    </div>
+
+    <section id="Prices">
+        <h2>Pricing</h2>
+        <div class="PricesContainer">
+
+            <div class="PriceCard">
+                <div>Cycle</div>
+                <div>100 $ / month</div>
+                <div><span>$5 daily</span>
+                    <span>$100 monthly</span>
+                    <span>$500 yearly</span>
+                </div>
+                <button>Purchase now </button>
+            </div>
+
+            <div class="PriceCard">
+                <div>Motor Cycle</div>
+                <div>200 $ / month</div>
+                <div><span>$10 daily</span>
+                    <span>$200 monthly</span>
+                    <span>$1000 yearly</span>
+                </div>
+                <button>Purchase now </button>
+            </div>
+
+            <div class="PriceCard">
+                <div>Four Wheelers</div>
+                <div>500 $ / month</div>
+                <div><span>$20 daily</span>
+                    <span>$500 monthly</span>
+                    <span>$3500 yearly</span>
+                </div>
+                <button>Purchase now </button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
