@@ -4,128 +4,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking the styles css file  -->
     <link rel="stylesheet" href="../Assignment2/Parking.css">
     <title>Metacube Parking system</title>
 </head>
 
 <body>
+    <!-- navigation and cover image -->
     <header>
         <div class="topBar">
-            <h1 class="title">
-                Meta <span>Parking</span>
-            </h1>
+            <div class="logo">
+                <img src="./Images/logo.png" width="40px" height="40px" alt="logo">
+                <h1 class="title">
+                    Meta <span>Parking</span>
+                </h1>
+            </div>
             <nav>
                 <ul class="navBar">
-                    <li class="navItem"><a href="#Employee">Add Employee</a></li>
-                    <li class="navItem"><a href="#Vehicle"> Add Vehicle</a></li>
+                    <li class="navItem"><a href="#Employee">Add employee</a></li>
+                    <li class="navItem"><a href="#Vehicle"> Add vehicle</a></li>
                     <li class="navItem"><a href="#feedBack">Give feedback</a></li>
-                    <li class="navItem"><a href="#Prices">Pricing</a></li>
+                    <li class="navItem"><a href="#prices">pricing</a></li>
                 </ul>
             </nav>
         </div>
-        <img src="./Images/1000228110.jpg" class="coverImage" alt="">
+        <img src="./Images/newCover.jpg" class="coverImage" alt="">
     </header>
 
-    <section id="Employee">
-        <h2>Employee</h2>
-        <hr>
-        <h3>Add Details</h3>
-        <form action="Post">
-            <label for="EmpName">Name</label>
-            <input type="text" name="EmployeeName" id="EmpName" placeholder="Enter Name">
+    <!-- Employee details secion -->
+    <section id="employee" class="section">
+        <details>
+            <summary>
+                <h2 class="heading">Employee</h2>
+            </summary>
+            <div class="container">
+                <h2>Add Details</h2>
+                <form action="Post">
+                    <label for="empName">Name
+                        <input type="text" name="EmployeeName" id="empName" class="inputFields"
+                            placeholder="Enter Name">
+                    </label>
 
-            <label for="EmpGender">Gender</label>
-            <input type="radio" name="EmployeeGender" id="EmpGender" value="Male" />Male
-            <input type="radio" name="EmployeeGender" id="EmpGender" value="Female" />Female
+                    <label for="empGender">Gender
+                        <span class="radioContainer">
+                            <input type="radio" name="EmployeeGender" id="empGender" value="Male" />Male
+                            <input type="radio" name="EmployeeGender" id="empGender" value="Female" />Female
+                        </span>
+                    </label>
 
-            <label for="EmpEmail">Email</label>
-            <input type="email" id="EmpEmail" name="EmployeeEmail" placeholder="Enter Email">
+                    <label for="empEmail">Email
+                        <input type="email" id="empEmail" name="EmployeeEmail" class="inputFields"
+                            placeholder="Enter Email">
+                    </label>
 
-            <label for="EmpPassword">Password</label>
-            <input type="password" id="EmpPassword" name="EmployeePassword" placeholder="Enter Password">
+                    <label for="empPassword">Password
+                        <input type="password" id="empPassword" name="EmployeePassword" class="inputFields"
+                            placeholder="Enter Password">
+                    </label>
 
-            <label for="ConfirmPassword">Confirm password</label>
-            <input type="password" id="ConfirmPassword" placeholder="Confirm Password">
-        </form>
+                    <label for="confirmPassword">Confirm password
+                        <input type="password" id="confirmPassword" class="inputFields" placeholder="Confirm Password">
+                    </label>
+                    <button type="submit" class="buttons">Submit</button>
+                </form>
+            </div>
+        </details>
+    </section>
+
+    <!-- Vehicle's details sections -->
+    <section id="vehicle" class="section">
+        <details>
+            <summary>
+                <h2 class="heading">Vehicle</h2>
+            </summary>
+            <div class="container">
+                <h3>Add Details</h3>
+
+                <form>
+                    <label for="vehicleCompany">Vehicle Make
+                        <input type="text" id="vehicleCompany" class="inputFields" name="VehicleName"
+                            placeholder="Enter vehicle's Company">
+                    </label>
+
+                    <label for="vehicleModel ">Vehicle Model
+                        <input type="text" id="vehicleModel" class="inputFields" name="VehicleModel"
+                            placeholder="Enter vehicle type">
+                    </label>
+                    <label for="vehicleType">Type
+                        <span class="radioContainer">
+                            <input type="radio" id="vehicleType" value="bicycle" name="VehicleType">Bicycle
+                            <input type="radio" id="vehicleType" value="bike" name="VehicleType">Motor cycle
+                            <input type="radio" id="vehicleType" value="car" name="VehicleType">Four Wheeler
+                        </span>
+
+                    </label>
+                    <label for="vehicleNumber">Number
+                        <input type="text" id="vehicleNumber" class="inputFields" placeholder="Number">
+                    </label>
+                    <label for="employeeId">Employee Id
+                        <input type="text" name="EmpId" id="employeeId" class="inputFields" placeholder="Employee ID">
+                    </label>
+                    <label for="identification">Identification
+                        <textarea name="identification" class="textarea" id="identification" cols="35"
+                            rows="10"></textarea>
+                    </label>
+                    <button type="submit" class="buttons">Submit</button>
+                </form>
+            </div>
+        </details>
+    </section>
+
+    <!-- feedback form  -->
+    <section id="feedBack" class="section">
+        <details>
+            <summary>
+                <h2 class="heading">FeedBack</h2>
+            </summary>
+            <div class="wrapper">
+                <img src="./Images/feedback.jpg" alt="">
+                <div class="feedbackForm">
+                    <h2>Get in touch</h2>
+                    <form action="">
+                        <input type="text" name="name" placeholder="Name" class="inputFields feedbackInput">
+                        <input type="email" name="email" placeholder="Email" class="inputFields feedbackInput">
+                        <input type="text" name="subject" placeholder="Subject" class="inputFields feedbackInput">
+                        <textarea placeholder="Message" cols="10" class="textarea" rows="10"></textarea>
+                        <button type="submit" class="buttons">send Email </button>
+                    </form>
+                </div>
+            </div>
+        </details>
 
     </section>
 
-    <section id="Vehicle">
-        <h2>Vehicle</h2>
-        <hr>
-        <h3>Add Details</h3>
+    <!-- pricing section  -->
+    <section id="prices" class="section">
+        <details>
+            <summary>
+                <h2 class="heading">Pricing</h2>
+            </summary>
+            <div class="container">
+                <div class="pricesContainer">
 
-        <form>
-            <label for="VehicleCompany">Vehicle Make</label>
-            <input type="text" id="VehicleCompany" name="VehicleName" placeholder="Enter vehicle's Company">
+                    <div class="priceCard">
+                        <div class="priceCardTitle">Cycle</div>
+                        <div class="circle">
+                            <span style="font-weight: bold;"> 100 $</span>
+                            <span style="font-size: 12px;">/month</span>
+                        </div>
+                        <div class="pricelist"><span>$5 daily</span>
+                            <span>$100 monthly</span>
+                            <span>$500 yearly</span>
+                        </div>
+                        <button>Purchase now </button>
+                    </div>
 
-            <label for="VehicleModel ">Vehicle Model</label>
-            <input type="text" id="VehicleModel" name="VehicleModel" placeholder="Enter vehicle type">
+                    <div class="priceCard">
+                        <div class="priceCardTitle">Motor Cycle</div>
+                        <div class="circle">
+                            <span style="font-weight: bold;">200 $</span>
+                            <span style="font-size: 12px;">/month</span>
+                        </div>
+                        <div class="pricelist"><span>$10 daily</span>
+                            <span>$200 monthly</span>
+                            <span>$1000 yearly</span>
+                        </div>
+                        <button>Purchase now </button>
+                    </div>
 
-            <label for="VehicleType">Type</label>
-            <input type="text" id="VehicleType" name="VehicleType" placeholder="Enter type">
-
-            <label for="VehicleNumber">Number</label>
-            <input type="number" id="VehicleNumber" placeholder="Number">
-
-            <label for="Employee Id">Employee Id</label>
-            <input type="text" name="EmpId" id="Employee Id" placeholder="Employee ID">
-
-            <label for="Identification">Identification(color ,mark,visible accessories etc)</label>
-            <textarea name="identification" id="Identification" cols="20" rows="5"></textarea>
-        </form>
-
-    </section id="feedBack">
-    <h2>FeedBack</h2>
-    <hr>
-
-    <img src="./Images/Screenshot (3).png" height="80" width="80" alt="">
-
-    <div>
-        <h3>Get in touch</h3>
-        <form action="">
-            <input type="text" name="name" placeholder="Name">
-            <input type="email" name="email" placeholder="Email">
-            <input type="text" name="subject" placeholder="Subject">
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">send Email -></button>
-        </form>
-    </div>
-
-    <section id="Prices">
-        <h2>Pricing</h2>
-        <div class="PricesContainer">
-
-            <div class="PriceCard">
-                <div>Cycle</div>
-                <div>100 $ / month</div>
-                <div><span>$5 daily</span>
-                    <span>$100 monthly</span>
-                    <span>$500 yearly</span>
+                    <div class="priceCard">
+                        <div class="priceCardTitle">Four Wheelers</div>
+                        <div class="circle">
+                            <span style="font-weight: bold;">500 $</span>
+                            <span style="font-size: 12px;">/month</span>
+                        </div>
+                        <div class="pricelist"><span>$20 daily</span>
+                            <span>$500 monthly</span>
+                            <span>$3500 yearly</span>
+                        </div>
+                        <button>Purchase now </button>
+                    </div>
                 </div>
-                <button>Purchase now </button>
             </div>
-
-            <div class="PriceCard">
-                <div>Motor Cycle</div>
-                <div>200 $ / month</div>
-                <div><span>$10 daily</span>
-                    <span>$200 monthly</span>
-                    <span>$1000 yearly</span>
-                </div>
-                <button>Purchase now </button>
-            </div>
-
-            <div class="PriceCard">
-                <div>Four Wheelers</div>
-                <div>500 $ / month</div>
-                <div><span>$20 daily</span>
-                    <span>$500 monthly</span>
-                    <span>$3500 yearly</span>
-                </div>
-                <button>Purchase now </button>
-            </div>
-        </div>
+        </details>
     </section>
 
 </body>
