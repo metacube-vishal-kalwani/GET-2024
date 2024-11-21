@@ -1,3 +1,11 @@
+<!-- HTML for metacube parking system which will have features like - 
+Ragistering a new employee
+adding employees vehicle
+feedback form
+pricing for parking  -->
+
+<!-- Author - vishal kalwani  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,10 +29,10 @@
             </div>
             <nav>
                 <ul class="navBar">
-                    <li class="navItem"><a href="#Employee">Add employee</a></li>
-                    <li class="navItem"><a href="#Vehicle"> Add vehicle</a></li>
+                    <li class="navItem"><a href="#employee">Add employee</a></li>
+                    <li class="navItem"><a href="#vehicle"> Add vehicle</a></li>
                     <li class="navItem"><a href="#feedBack">Give feedback</a></li>
-                    <li class="navItem"><a href="#prices">pricing</a></li>
+                    <li class="navItem"><a href="#prices">Pricing</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,8 +49,8 @@
                 <h2>Add Details</h2>
                 <form action="Post">
                     <label for="empName">Name
-                        <input type="text" name="EmployeeName" id="empName" class="inputFields"
-                            placeholder="Enter Name">
+                        <input type="text" name="EmployeeName" id="empName" class="inputFields" placeholder="Enter Name"
+                            required>
                     </label>
 
                     <label for="empGender">Gender
@@ -53,17 +61,21 @@
                     </label>
 
                     <label for="empEmail">Email
-                        <input type="email" id="empEmail" name="EmployeeEmail" class="inputFields"
-                            placeholder="Enter Email">
+                        <input type="email" id="empEmail" required name="EmployeeEmail" class="inputFields"
+                            placeholder="123@gmail.com">
+                    </label>
+                    <label for="contactNumber">Confirm password
+                        <input type="number" id="contactNumber" required class="inputFields" placeholder="9434322430">
                     </label>
 
                     <label for="empPassword">Password
-                        <input type="password" id="empPassword" name="EmployeePassword" class="inputFields"
+                        <input type="password" id="empPassword" name="EmployeePassword" class="inputFields" required
                             placeholder="Enter Password">
                     </label>
 
                     <label for="confirmPassword">Confirm password
-                        <input type="password" id="confirmPassword" class="inputFields" placeholder="Confirm Password">
+                        <input type="password" id="confirmPassword" required class="inputFields"
+                            placeholder="Confirm Password">
                     </label>
                     <button type="submit" class="buttons">Submit</button>
                 </form>
@@ -88,7 +100,7 @@
 
                     <label for="vehicleModel ">Vehicle Model
                         <input type="text" id="vehicleModel" class="inputFields" name="VehicleModel"
-                            placeholder="Enter vehicle type">
+                            placeholder="Enter vehicle Model">
                     </label>
                     <label for="vehicleType">Type
                         <span class="radioContainer">
@@ -99,14 +111,14 @@
 
                     </label>
                     <label for="vehicleNumber">Number
-                        <input type="text" id="vehicleNumber" class="inputFields" placeholder="Number">
+                        <input type="text" id="vehicleNumber" class="inputFields" placeholder="RJ01TS2343">
                     </label>
                     <label for="employeeId">Employee Id
-                        <input type="text" name="EmpId" id="employeeId" class="inputFields" placeholder="Employee ID">
+                        <input type="text" name="EmpId" id="employeeId" class="inputFields" placeholder="G24/2354">
                     </label>
                     <label for="identification">Identification
-                        <textarea name="identification" class="textarea" id="identification" cols="35"
-                            rows="10"></textarea>
+                        <textarea name="identification" class="textarea" id="identification" cols="35" rows="10"
+                            placeholder="color/ mark etc.."></textarea>
                     </label>
                     <button type="submit" class="buttons">Submit</button>
                 </form>

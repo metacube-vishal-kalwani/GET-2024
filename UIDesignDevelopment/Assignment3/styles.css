@@ -1,0 +1,118 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: url(./images/bodybg.png);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+header .coverImg {
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  position: absolute;
+}
+header nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header nav .logo {
+  font-weight: 600;
+}
+header nav ul {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+header nav .socialIcons {
+  display: flex;
+  gap: 20px;
+}
+header nav .socialIcons i {
+  color: white;
+  background: transparent;
+  font-weight: lighter;
+  width: 20px;
+  height: 20px;
+}
+header .homeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 100px;
+}
+header .homeContainer .leftSection p {
+  color: white;
+  font-size: 2rem;
+  width: 300px;
+  font-weight: 600;
+}
+header .homeContainer .leftSection .buttonsContainer .button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+}
+header .homeContainer .leftSection .buttonsContainer .download {
+  background-color: red;
+}
+header .homeContainer .leftSection .buttonsContainer .feature {
+  background: #436cdc;
+}
+header .homeContainer .rightSection img {
+  width: 60%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 100px;
+  gap: 50px;
+}
+.section .sectionTopContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.section .sectionTopContainer .heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(99, 136, 251);
+}
+.section .sectionTopContainer .subHeading {
+  font-size: 1rem;
+  color: rgb(156, 160, 169);
+}
+.section .featureList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section .featureList .featureItem {
+  width: 210px;
+}
+.section .featureList .featureItem .text p {
+  font-weight: 500;
+}
+.section .featureList .featureItem .text small {
+  text-align: justify;
+  color: rgb(180, 180, 180);
+}/*# sourceMappingURL=styles.css.map */
