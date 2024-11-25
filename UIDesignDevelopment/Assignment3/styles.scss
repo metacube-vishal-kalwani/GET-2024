@@ -1,6 +1,8 @@
 
 *{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     scroll-behavior: smooth;
 }
 body{
     background: url(./images/bodybg.png);
@@ -8,75 +10,64 @@ body{
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    
+    // gap: 100px;
 }
 header{
 
     .coverImg{
         width: 100%;
-        height: 100vh;
+        height: 95vh;
         z-index: -2;
         position: absolute;
-    }
-    nav{
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        
-        .logo{
-            font-weight: 600;
-        }
-        ul{
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            li{
-                list-style: none;
-                a{
-                    text-decoration: none;
-                    color: inherit;
-                }
-            }
-        }
-        .socialIcons{
-            display: flex;
-            gap: 20px;
-    
-            i{
-                color: white;
-                background: transparent;
-                font-weight: lighter;
-                width: 20px;
-                height: 20px;
-            }
+
+        @media screen and (max-width:576px) {
+            height: 100vh;
         }
     }
+  
 
     .homeContainer{
-        width: 100%;
         display: flex;
-        // align-items: center;
-        justify-content: space-around;
-        padding: 50px 100px;
+        justify-content: space-between;
+        padding: 50px;
+        padding-left: 120px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        @media screen and (max-width:576px) {
+            padding-left: 0px;
+            flex-direction: column-reverse;
+
+        }
 
         .leftSection{
             p{
                 color: white;
-                font-size: 2rem;
-                width: 300px;
+                font-size: 3.5rem;
+                width: 450px;
                 font-weight: 600;
+                margin: 0px;
+                margin-bottom: 20px;
             }
             .buttonsContainer{
                 
                 .button{
+                    margin: 0px 5px;
                     height: 40px;
                     width: 100px;
                     border: none;
-                    border-radius: 2px;
+                    border-radius: 3px;
                     color: white;
                     cursor: pointer;
+                    transition: ease scale 0.2s;
                     
+                    &:hover{
+                        scale: 1.1;
+                    }
+                    &:active{
+                        scale: 0.9;
+                    }
                 }
                 .download{
                     background-color: red;
@@ -89,11 +80,57 @@ header{
         }
         .rightSection{
             img{
-                width: 60%;
+                width: 70%;
+
+                @media screen and () {
+                    
+                }
             }
         }
     }
   
+}
+nav{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    .logo{
+        font-weight: 600;
+    }
+    ul{
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        li{
+            list-style: none;
+            transition: ease scale 0.2s;
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            &:hover{
+                scale: 1.1;
+            }
+            &:active{
+                scale: 0.9;
+            }
+        }
+    }
+    .socialIcons{
+        display: flex;
+        gap: 20px;
+
+        i{
+            color: white;
+            background: transparent;
+            font-weight: lighter;
+            width: 20px;
+            height: 20px;
+        }
+        
+    }
 }
 
 
@@ -101,20 +138,22 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 100px;
+    padding: 0px 150px;
     gap: 50px;
+    margin-top: 50px;
     .sectionTopContainer{
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        margin-bottom: 50px;
         .heading{
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size:2rem;
+            font-weight: bold;
             color: rgba(99,136,251,255);
         }
         .subHeading{
-            font-size: 1rem;
+        
             color: rgba(156,160,169,255);
         }
     }
@@ -125,18 +164,269 @@ header{
         justify-content: space-between;
 
         .featureItem{
-            width: 210px;
+            width: 28%;
+            display: flex;
+            gap: 10px;
+            .icon{
+                padding-top:25px;
+            }
             .text{
                 p{
+                    font-size: 20px;
                     font-weight:500;
                 }
                 small{
                     text-align: justify;
-                    color: rgb(180, 180, 180) ;
+                    color: rgb(180, 180, 180);
                 }
             }
         }
+    }
+    
+    .slider{
+         
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        .screen{
+            position: absolute;
+            transition: all ease-in-out 0.5s;
 
+        }
+
+        .screen:nth-child(5){
+            z-index: 1;
+            height: 350px;
+            translate: 350px;
+            transform: perspective(400px) rotate3D(0, 1, 0, -15deg);
+        }
+        
+        .screen:nth-child(4){
+            z-index: 2;
+            height: 400px;
+            translate: 200px;
+            transform: perspective(400px) rotate3D(0, 1, 0, -15deg);
+        }
+        
+        .screen:nth-child(3){
+            z-index: 3;
+            height: 500px;
+            transition: all ease-in-out 0.5s;
+        }
+        
+        .screen:nth-child(2){
+            z-index: 2;
+            height: 400px;
+            translate: -200px;
+            transform: perspective(400px) rotate3D(0, 1, 0, 15deg);
+        }
+        
+        .screen:nth-child(1){
+            z-index: 2;
+            height: 350px;
+            translate: -350px;
+            transform: perspective(400px) rotate3D(0, 1, 0, 15deg);
+            
+        }
+        
+        .screen:hover{
+            z-index: 4;
+            height: 520px;
+            transform: perspective(400px) rotate3D(0, 1, 0, 0deg);
+            cursor: pointer;
+        }
+        
+        
+      
+        
+      
     }
 }
+
+.screenshot{
+    position: relative;
+    .phoneImg{
+        width: 210px;
+    }
+    .title{
+        rotate: 90deg;
+        font-size: 145px;
+        position: absolute;
+        top: 117px;
+        left: 20px;
+        z-index: -1;
+        color: #d5d5d5;
+    }
+
+    .sunny{
+    font-size: 160px;
+    top: 100px;
+    left: 30px;
+    }
+    
+    .rainy{
+    font-size: 185px;
+    top: 95px;
+    left: 25px;
+    }
+
+    .circle{
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+     
+    }
+    
+    .pos-right{
+        top: 120px;
+        left: 181px;
+    }
+    .pos-left{
+        top: 277px;
+       left: -60px;
+    }
+    .bg-yellow{
+        background: rgb(255, 234, 40);
+    }
+    .bg-blue{
+        background: blue;
+    }
+    .bg-orange{
+        background: orange;
+    }
+    .bg-red{
+        background: red;
+    }   
+    .bg-cyan{
+        background: cyan;
+    }
+    .bg-lightBlue{
+        background: #7691c6;
+    }
+}
+
+.list{
+    width: 80%;
+    padding:0px 50px ;
+    .listItem:nth-child(2n){
+        flex-direction: row-reverse;
+    }
+    .listItem{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .leftContainer{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .topic{
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+            .description{
+                color: grey;
+            }
+            .widget{
+                width: 80px;
+            }
+        }
+    }
+}
+
+.reviewsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    .reviewItem{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        
+        .reviewText{
+            font-weight: 500;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+        }
+        .endQuotes{
+            rotate: 180deg;
+            align-self: flex-end;
+        }
+    }
+}
+
+.advertisement{
+    padding:0px 150px;
+    padding-top: 50px;
+    background-color: #6388FB;
+    display: flex;
+    justify-content:space-around;
+    .left{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: white;
+        width: 50%;
+      
+        .largeText{
+            margin: 5px 0px;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .smallText{
+            width: 63%;
+        }
+
+        .ctaContainer{
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            .downloadCTA{
+                width: 100px;
+                cursor: pointer;
+            }
+        }
+       
+    }
+    
+    .coverPhones{
+            height: 225px;
+    }
+    
+}
+
+.footer{
+    // height: 200px;
+    background: #383A53;
+    align-items: center;
+    nav{
+        margin-top: 20px;
+        padding-bottom: 20px;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        border-bottom: 1px solid grey;
+        margin-bottom: 50px;
+    }
+    
+    span{
+        color: grey;
+        font-size: 12px;
+    }
+}
+
+

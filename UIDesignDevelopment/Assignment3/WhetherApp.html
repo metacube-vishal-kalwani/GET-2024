@@ -1,4 +1,4 @@
-<!-- HTML for whether application 
+<!-- HTML for the landing page of  whether application  containing it's features download links and reviews of users 
 Author - vishal kalwani GET 2024 -->
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ Author - vishal kalwani GET 2024 -->
     <!-- Linking the scss file -->
     <link rel="stylesheet" href="./styles.css">
 
-    <!-- Linking CDN for font usage -->
+    <!-- Linking CDN for  ROBOTO font usage -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,16 +19,15 @@ Author - vishal kalwani GET 2024 -->
         rel="stylesheet">
 
     <!-- linking CDN for icon usage    -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/59c9982407.js" crossorigin="anonymous"></script>
 
     <title>Whether app</title>
 </head>
 
 <body>
 
-    <header>
+    <!-- Header section contains the navigation bar and home screen -->
+    <header id="home">
         <img src="./images/homebg.png" class="coverImg" alt="backgroundImg">
         <nav>
             <div class="logo">
@@ -36,10 +35,10 @@ Author - vishal kalwani GET 2024 -->
             </div>
 
             <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="features">Features</a></li>
-                <li><a href="reviews">Reviews</a></li>
-                <li><a href="download">Download</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#download">Download</a></li>
             </ul>
 
             <div class="socialIcons">
@@ -67,6 +66,7 @@ Author - vishal kalwani GET 2024 -->
 
     </header>
 
+    <!-- This section contains information about all the features of the whether application  -->
     <section id="features" class="section">
         <div class="sectionTopContainer">
             <div class="heading">Perfect Features</div>
@@ -76,7 +76,7 @@ Author - vishal kalwani GET 2024 -->
         <div class="featureList">
 
             <div class="featureItem">
-                <div class="icon"></div>
+                <div class="icon"><i class="fa fa-diamond" style="font-size:48px;color:red"></i></div>
                 <div class="text">
                     <p>Usablity</p>
                     <small>sometimes the simplest things are the hardest to find.So we created a new line for everyday
@@ -85,7 +85,7 @@ Author - vishal kalwani GET 2024 -->
             </div>
 
             <div class="featureItem">
-                <div class="icon"></div>
+                <div class="icon"><i class="fa fa-layer-group" style="font-size:48px; color: red;"></i></div>
                 <div class="text">
                     <p>Parallax Effect</p>
                     <small>sometimes the simplest things are the hardest to find.So we created a new line for everyday
@@ -93,16 +93,181 @@ Author - vishal kalwani GET 2024 -->
                 </div>
             </div>
             <div class="featureItem">
-                <div class="icon"></div>
-                <div class="text">
+                <div class="icon"><i class="fa fa-box" style="font-size:48px; color: red;"></i></div>
+                <div class=" text">
                     <p>Unlimited Colors</p>
-                    <small>sometimes the simplest things are the hardest to find.So we created a new line for everyday
+                    <small>sometimes the simplest things are the hardest to find.So we created a new line for
+                        everyday
                         life</small>
                 </div>
             </div>
         </div>
 
+        <div class="slider">
+            <img src="images/drag3.png" alt="" class="screen">
+            <img src="images/drag1.png" alt="" class="screen">
+            <img src="images/drag2.png" alt="" class="screen">
+            <img src="images/drag1.png" alt="" class="screen">
+            <img src="images/drag3.png" alt="" class="screen">
+
+        </div>
+
     </section>
+
+    <section id="screenshots" class="section">
+        <div class="sectionTopContainer">
+            <div class="heading">Screenshots</div>
+            <div class="subHeading">The brightest images</div>
+        </div>
+
+        <div class="list">
+            <div class="listItem">
+                <div class="screenshot">
+                    <div class="title">Cloudy</div>
+                    <img src="./images/screen01.png" alt="phone cloudy" class="phoneImg">
+                    <span class="circle bg-yellow pos-right">cloudy</span>
+                    <span class="circle bg-blue pos-left">15 &#176;</sup> </span>
+                </div>
+                <div class="leftContainer">
+                    <img src="./images/cloud1.png" width="100px" height="50px" alt="">
+                    <span class="topic">
+                        When the clouds
+                    </span>
+                    <span class="description">
+                        Variable information on the air humidity, the feeling of the whether, and the ability to share
+                        this with your friends
+                    </span>
+                    <img src="./images/widget.png" alt="" class="widget">
+                </div>
+            </div>
+
+            <div class="listItem">
+                <div class="screenshot">
+                    <div class="title sunny">Sunny</div>
+                    <img src="./images/screen02.png" alt="phone sunny" class="phoneImg">
+                    <span class="circle bg-orange pos-right">Sunny</span>
+                    <span class="circle bg-red pos-left">31 &#176; </span>
+                </div>
+                <div class="leftContainer">
+                    <img src="./images/sun1.png" width="50px" height="50px" alt="">
+                    <span class="topic">
+                        When the clouds
+                    </span>
+                    <span class="description">
+                        Variable information on the air humidity, the feeling of the whether, and the ability to share
+                        this with your friends
+                    </span>
+                    <img src="./images/widget.png" alt="" class="widget">
+
+                </div>
+            </div>
+
+            <div class="listItem">
+                <div class="screenshot">
+                    <div class="title rainy">Rainy</div>
+                    <img src="./images/screen03.png" alt="phone cloudy" class="phoneImg">
+                    <span class="circle bg-cyan pos-right">Rainy</span>
+                    <span class="circle bg-lightBlue pos-left">9 &#176;</sup> </span>
+                </div>
+                <div class="leftContainer">
+                    <img src="./images/rainy1.png" width="100px" height="50px" alt="">
+                    <span class="topic">
+                        When the clouds
+                    </span>
+                    <span class="description">
+                        Sometimes the simplest things are the hardest to find. So we created a new line for everyday
+                        life. Sometimes the simplest
+                    </span>
+                    <img src="./images/widget.png" alt="" class="widget">
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section">
+        <div class="sectionTopContainer">
+            <div class="heading">What reviews are saying</div>
+            <div class="subHeading">Reviews</div>
+
+            <div class="reviewsContainer">
+                <div class="reviewItem">
+                    <img src="./images/upper-quotation-marks-blue.svg" class="startQuotes" alt="quotations">
+                    <p class="reviewText">What art offers is space - a certain breathing room for the sprit</p>
+                    <small class="author">John updike</small>
+                    <img src="./images/upper-quotation-marks-blue.svg" class="endQuotes" alt="quotations">
+                </div>
+
+                <div class="reviewItem">
+                    <img src="./images/upper-quotation-marks-blue.svg" class="startQuotes" alt="quotations">
+                    <p class="reviewText">What art offers is space - a certain breathing room for the sprit</p>
+                    <small class="author">John updike</small>
+                    <img src="./images/upper-quotation-marks-blue.svg" class="endQuotes" alt="quotations">
+                </div>
+
+                <div class="reviewItem">
+                    <img src="./images/upper-quotation-marks-blue.svg" class="startQuotes" alt="quotations">
+                    <p class="reviewText">What art offers is space - a certain breathing room for the sprit</p>
+                    <small class="author">John updike</small>
+                    <img src="./images/upper-quotation-marks-blue.svg" class="endQuotes" alt="quotations">
+                </div>
+
+                <div class="reviewItem">
+                    <img src="./images/upper-quotation-marks-blue.svg" class="startQuotes" alt="quotations">
+                    <p class="reviewText">What art offers is space - a certain breathing room for the sprit</p>
+                    <small class="author">John updike</small>
+                    <img src="./images/upper-quotation-marks-blue.svg" class="endQuotes" alt="quotations">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="download" class="advertisement">
+        <div class="left">
+            <p class="largeText">
+                How Download the app?
+            </p>
+            <small class="smallText">
+                just download the app from the store, simple, nice and user-friendly application of the whether. Only
+                relevent and useful information.
+            </small>
+            <div class="ctaContainer">
+                <img src="images/appstor.png" class="downloadCTA" alt="">
+                <img src="images/googleplay.png" class="downloadCTA" alt="">
+            </div>
+        </div>
+        <img src="images/appdownload1.png" alt="phones" class="coverPhones">
+
+    </section>
+    <Footer class="footer">
+        <div>
+            <nav>
+                <div class="logo">
+                    <img src="./images/footer-logo.png" alt="logo" height="18px">
+                </div>
+
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="features">Features</a></li>
+                    <li><a href="reviews">Reviews</a></li>
+                    <li><a href="download">Download</a></li>
+                </ul>
+
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                </div>
+            </nav>
+        </div>
+
+        <center> <span>All Rights Reserved</span></center>
+
+
+    </Footer>
 </body>
 
 </html>
