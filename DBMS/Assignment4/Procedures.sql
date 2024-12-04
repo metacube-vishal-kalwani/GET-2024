@@ -1,4 +1,5 @@
 
+
 --Create a Stored procedure to retrieve average sales of each product in a month. Month 
 --and year will be input parameter to function.
 

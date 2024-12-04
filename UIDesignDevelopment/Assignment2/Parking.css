@@ -1,7 +1,7 @@
 
 /* stylings will be applied to all elements */
 *{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing:  border-box;
     scroll-behavior: smooth;
 }
@@ -9,6 +9,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 50px;
+    background: #eff1d9 !important;
 }
 
 /* stylings for header */
@@ -93,23 +94,36 @@ summary{
 
 /* stylings for forms */
 form{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
+    justify-content: center;
+    align-self: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
 }
 
 form label{
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+form .error{
+    color: red;
 }
 
  .inputFields   {
     height: 40px;
     width: 50%;
     border-radius: 5px;
-    border: 1px solid rgb(156, 156, 156);
+    border: 2px solid rgb(156, 156, 156);
     padding-left: 10px;
 }
 
@@ -187,16 +201,17 @@ cursor: pointer;
     margin-bottom: 50px;
 }
 .pricesContainer{
+    width: 25%;
     display: flex;
     flex-direction: row;
     gap: 50px;
-    align-items: center;
-    justify-content: space-evenly;
+    /* align-items: center; */
+    justify-content: space-between;
     margin-top: 50px;
 }
 .priceCard{
-    width: 25%;
-    
+    width: 100%;
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,10 +253,116 @@ cursor: pointer;
     flex-direction: column;
     border: 1px solid black;
     border-radius: 50%;
-    padding: 15px;
+    padding: 30px;
     gap: 5px;
+    font-size: 14px;
     align-items: flex-end;
 
 }
 
+.planContainer{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+}
+.planContainer p{
+    font-size: 30px;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-family: serif;
+}
+
+.planContainer .planOptions{
+    list-style: none;
+    padding:0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.planOptions .option{
+    color: white;
+    background: blue;
+    border-radius: 4px;
+    padding: 15px 20px ;
+    transition: box-shadow 0.5 ease;
+    cursor: pointer;
+}
+
+.planOptions .option:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-weight: 600;
+    
+}
+
+.pricesSection{
+    display: flex;
+    /* gap: 50px; */
+    justify-content: space-between;
+    padding: 50px;
+    margin-top: 10px;
+    border: 2px solid rgb(6, 0, 121);
+    border-radius: 8px ;
+}
+
+#employeeForm label{
+    display: none;
+}
+
+#vehicleForm label{
+    display: none;
+}
+
+.displayBlock{
+    display: flex !important;
+}
+.displayNone{
+    display: none;
+}
+
+input[type='password']{
+    outline: none;
+    /* border: none; */
+}
+
+.showButton{
+    display: block;
+    align-self: center;
+}
+
+.billContainer{
+    width: 30%;
+    border: 2px solid blue;
+    border-radius: 8px;
+    background: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.currencyType{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.amount{
+ margin-top: 33%;
+ align-self: center;
+ font-size: 20px;
+ display: flex;
+}
+.amount .value{
+    font-weight: bold;
+}
+
+.billBtn{
+    width: 100px;
+   position: absolute;
+   bottom: 30px;
+   right: 30px;
+}
 

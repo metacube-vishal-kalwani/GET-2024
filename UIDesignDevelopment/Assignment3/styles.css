@@ -28,12 +28,14 @@ header .homeContainer {
   padding: 50px;
   padding-left: 120px;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
 @media screen and (max-width: 576px) {
   header .homeContainer {
-    padding-left: 0px;
+    padding-left: 50px;
     flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
 }
 header .homeContainer .leftSection p {
@@ -43,6 +45,14 @@ header .homeContainer .leftSection p {
   font-weight: 600;
   margin: 0px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 576px) {
+  header .homeContainer .leftSection p {
+    font-size: 2rem;
+    font-weight: 500;
+    width: 250px;
+    text-align: center;
+  }
 }
 header .homeContainer .leftSection .buttonsContainer .button {
   margin: 0px 5px;
@@ -69,14 +79,27 @@ header .homeContainer .leftSection .buttonsContainer .feature {
 header .homeContainer .rightSection img {
   width: 70%;
 }
+@media screen and (max-width: 576px) {
+  header .homeContainer .rightSection img {
+    width: 40%;
+    margin: auto 33%;
+  }
+}
+
 nav {
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 nav .logo {
   font-weight: 600;
+}
+@media screen and (max-width: 576px) {
+  nav .logo {
+    display: none;
+  }
 }
 nav ul {
   display: flex;
@@ -109,6 +132,15 @@ nav .socialIcons i {
   height: 20px;
 }
 
+#features {
+  margin-top: 50px;
+}
+@media screen and (max-width: 576px) {
+  #features {
+    margin-top: 100px;
+  }
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -116,6 +148,11 @@ nav .socialIcons i {
   padding: 0px 150px;
   gap: 50px;
   margin-top: 50px;
+}
+@media screen and (max-width: 576px) {
+  .section {
+    padding: 0px 50px;
+  }
 }
 .section .sectionTopContainer {
   display: flex;
@@ -136,11 +173,18 @@ nav .socialIcons i {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .section .featureList .featureItem {
   width: 28%;
   display: flex;
   gap: 10px;
+}
+@media screen and (max-width: 576px) {
+  .section .featureList .featureItem {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .section .featureList .featureItem .icon {
   padding-top: 25px;
@@ -159,6 +203,11 @@ nav .socialIcons i {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  .section .slider {
+    display: none;
+  }
 }
 .section .slider .screen {
   position: absolute;
@@ -215,6 +264,11 @@ nav .socialIcons i {
   z-index: -1;
   color: #d5d5d5;
 }
+@media screen and (max-width: 576px) {
+  .screenshot .title {
+    display: none;
+  }
+}
 .screenshot .sunny {
   font-size: 160px;
   top: 100px;
@@ -270,16 +324,36 @@ nav .socialIcons i {
 .list .listItem:nth-child(2n) {
   flex-direction: row-reverse;
 }
+@media screen and (max-width: 576px) {
+  .list .listItem:nth-child(2n) {
+    flex-direction: column;
+  }
+}
 .list .listItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 576px) {
+  .list .listItem {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0px;
+  }
 }
 .list .listItem .leftContainer {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+@media screen and (max-width: 576px) {
+  .list .listItem .leftContainer {
+    width: 100%;
+    align-items: center;
+  }
 }
 .list .listItem .leftContainer .topic {
   font-weight: 600;
@@ -300,10 +374,20 @@ nav .socialIcons i {
   gap: 50px;
   margin-top: 50px;
 }
+@media screen and (max-width: 576px) {
+  .reviewsContainer {
+    flex-direction: column;
+  }
+}
 .reviewsContainer .reviewItem {
   width: 40%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 576px) {
+  .reviewsContainer .reviewItem {
+    width: 100%;
+  }
 }
 .reviewsContainer .reviewItem .reviewText {
   font-weight: 500;
@@ -324,12 +408,25 @@ nav .socialIcons i {
   display: flex;
   justify-content: space-around;
 }
+@media screen and (max-width: 576px) {
+  .advertisement {
+    padding: 0px 50px;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
 .advertisement .left {
   display: flex;
   flex-direction: column;
   gap: 5px;
   color: white;
   width: 50%;
+}
+@media screen and (max-width: 576px) {
+  .advertisement .left {
+    width: 100%;
+    align-items: center;
+  }
 }
 .advertisement .left .largeText {
   margin: 5px 0px;
@@ -338,6 +435,11 @@ nav .socialIcons i {
 }
 .advertisement .left .smallText {
   width: 63%;
+}
+@media screen and (max-width: 576px) {
+  .advertisement .left .smallText {
+    width: 100%;
+  }
 }
 .advertisement .left .ctaContainer {
   display: flex;
@@ -350,6 +452,11 @@ nav .socialIcons i {
 }
 .advertisement .coverPhones {
   height: 225px;
+}
+@media screen and (max-width: 576px) {
+  .advertisement .coverPhones {
+    height: 180px;
+  }
 }
 
 .footer {

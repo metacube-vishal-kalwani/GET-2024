@@ -1,0 +1,96 @@
+$ct-logo-lg-height: 22px;
+$ct-logo-sm-height: 22px;
+$ct-leftbar-width: 260px;
+$ct-leftbar-width-md: 160px;
+$ct-leftbar-width-sm: 70px;
+$ct-leftbar-condensed-height: 2000px;
+$ct-topbar-height: 70px;
+$ct-menu-item-icon-size: 1.2rem;
+$ct-menu-item-font-size: 0.9375rem;
+$ct-menu-item-padding-x: 10px;
+$ct-menu-item-padding-y: 15px;
+$ct-menu-condensed-link-bg: #727cf5;
+$ct-footer-height: 60px;
+$ct-theme-card-border-width: 0px;
+
+
+body {
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.body-background {
+    background-color: #f2f4f7 !important;
+}
+
+.topbar {
+    position: sticky;
+    top: 0px;
+    height: fit-content;
+}
+
+.icons {
+    font-size: 22px !important;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.action-icon {
+    font-size: 20px !important;
+    color: rgb(77, 77, 77) !important;
+    opacity: 0.6;
+}
+
+.badge-success-lighten {
+    background-color: rgba(177, 255, 177, 75%) !important;
+}
+
+.badge-danger-lighten {
+    background-color: rgba(253, 97, 97, 0.75);
+}
+
+.badge-warning-lighten {
+    background-color: #ffc35a;
+    opacity: 0.6;
+}
+
+.side-nav {
+    padding-left: 0;
+    list-style-type: none;
+
+    a {
+        text-decoration: none !important;
+        color: rgb(177, 177, 177);
+    }
+
+}
+
+
+
+.side-nav-link {
+    display: block;
+    list-style: none;
+    position: relative;
+    white-space: nowrap;
+    color: rgb(177, 177, 177);
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    font-size: 1rem;
+    padding: 10px;
+    text-decoration: none;
+
+
+}
+
+.side-nav-title {
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #8391a2;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 1px;
+}

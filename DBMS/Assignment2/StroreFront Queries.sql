@@ -105,7 +105,9 @@ ORDER BY P.date_added;
 -- Display the list of products which dont have any images.
 SELECT product_name FROM Product
 where product_id NOT IN
-(SELECT DISTINCT(product_id) FROM Images);
+(   SELECT DISTINCT(product_id) 
+    FROM Images
+);
 
 
 
@@ -139,7 +141,7 @@ WHERE category_id IN (
 --Display the list of Products whose Quantity on hand (Inventory) is under 20.
 SELECT product_id , product_name FROM Product
 where  quantity  < 20;
-
+  
 
 -- Display Recent 50 Orders placed (Id, Order Date, Order Total).
 SELECT order_id ,order_date, total_amount FROM CustomerOrders
@@ -175,8 +177,7 @@ FROM
 LEFT JOIN 
     CustomerOrders o ON u.user_id = o.user_id 
     AND    DATEDIFF(CURRENT_TIMESTAMP, o.order_date) > 30
-WHERE 
-    o.order_id IS NULL;
+
 
 
 

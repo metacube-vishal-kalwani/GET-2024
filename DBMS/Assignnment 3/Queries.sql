@@ -82,6 +82,7 @@ GROUP BY
     DATE_FORMAT(o.order_date, '%Y-%m')
 ORDER BY 
     DATE_FORMAT(o.order_date, '%Y-%m');
+	
 
 --Mark the products as Inactive which are not ordered in last 90 days
 UPDATE Product 

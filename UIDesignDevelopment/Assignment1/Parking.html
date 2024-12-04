@@ -46,38 +46,46 @@ pricing for parking  -->
                 <h2 class="heading">Employee</h2>
             </summary>
             <div class="container">
-                <h2>Add Details</h2>
-                <form action="Post">
+                <h2 class="titleName">Add Details</h2>
+
+                <form id="employeeForm">
                     <label for="empName">Name
-                        <input type="text" name="EmployeeName" id="empName" class="inputFields" placeholder="Enter Name"
+                        <input type="text" name="empName" id="empName" class="inputFields" placeholder="Enter Name"
                             required>
                     </label>
 
                     <label for="empGender">Gender
                         <span class="radioContainer">
-                            <input type="radio" name="EmployeeGender" id="empGender" value="Male" />Male
-                            <input type="radio" name="EmployeeGender" id="empGender" value="Female" />Female
+                            <input type="radio" name="empGender" id="empGender" value="Male" />Male
+                            <input type="radio" name="empGender" id="empGender" value="Female" />Female
                         </span>
                     </label>
 
                     <label for="empEmail">Email
-                        <input type="email" id="empEmail" required name="EmployeeEmail" class="inputFields"
+                        <input type="email" id="empEmail" required name="empEmail" class="inputFields"
                             placeholder="123@gmail.com">
+
                     </label>
                     <label for="contactNumber">Contact number
-                        <input type="number" id="contactNumber" required class="inputFields" placeholder="9434322430">
+                        <input type="number" name="empContact" id="contactNumber" required class="inputFields"
+                            placeholder="9434322430">
+
                     </label>
 
                     <label for="empPassword">Password
-                        <input type="password" id="empPassword" name="EmployeePassword" class="inputFields" required
-                            placeholder="Enter Password">
+                        <input type="password" id="empPassword" name="empPassword" class="inputFields" required
+                            placeholder="Enter Password" onkeydown="verifyPassword()">
                     </label>
 
                     <label for="confirmPassword">Confirm password
-                        <input type="password" id="confirmPassword" required class="inputFields"
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="inputFields"
                             placeholder="Confirm Password">
                     </label>
-                    <button type="submit" class="buttons">Submit</button>
+                    <div class="error displayNone">Invalid input!! please enter valid input</div>
+
+
+                    <button type="button" id="empFormSubmitBtn" class="buttons displayNone"
+                        onclick="getVehicleDetails()">Submit</button>
                 </form>
             </div>
         </details>
@@ -92,35 +100,37 @@ pricing for parking  -->
             <div class="container">
                 <h3>Add Details</h3>
 
-                <form>
+                <form id="vehicleForm">
                     <label for="vehicleCompany">Vehicle Make
-                        <input type="text" id="vehicleCompany" class="inputFields" name="VehicleName"
+                        <input type="text" id="vehicleCompany" class="inputFields" name="vehicleName"
                             placeholder="Enter vehicle's Company">
                     </label>
 
                     <label for="vehicleModel ">Vehicle Model
-                        <input type="text" id="vehicleModel" class="inputFields" name="VehicleModel"
+                        <input type="text" id="vehicleModel" class="inputFields" name="vehicleModel"
                             placeholder="Enter vehicle Model">
                     </label>
                     <label for="vehicleType">Type
                         <span class="radioContainer">
-                            <input type="radio" id="vehicleType" value="bicycle" name="VehicleType">Bicycle
-                            <input type="radio" id="vehicleType" value="bike" name="VehicleType">Motor cycle
-                            <input type="radio" id="vehicleType" value="car" name="VehicleType">Four Wheeler
+                            <input type="radio" id="vehicleType" value="bicycle" name="vehicleType">Bicycle
+                            <input type="radio" id="vehicleType" value="bike" name="vehicleType">Motor cycle
+                            <input type="radio" id="vehicleType" value="car" name="vehicleType">Four Wheeler
                         </span>
 
                     </label>
                     <label for="vehicleNumber">Number
-                        <input type="text" id="vehicleNumber" class="inputFields" placeholder="RJ01TS2343">
+                        <input type="text" id="vehicleNumber" name="vehicleNumber" class="inputFields"
+                            placeholder="RJ01TS2343">
                     </label>
                     <label for="employeeId">Employee Id
-                        <input type="text" name="EmpId" id="employeeId" class="inputFields" placeholder="G24/2354">
+                        <input type="text" name="empId" id="employeeId" class="inputFields" placeholder="G24/2354">
                     </label>
-                    <label for="identification">Identification
+                    <!-- <label for="identification">Identification
                         <textarea name="identification" class="textarea" id="identification" cols="35" rows="10"
                             placeholder="color/ mark etc.."></textarea>
-                    </label>
-                    <button type="submit" class="buttons">Submit</button>
+                    </label> -->
+                    <button type="button" id="vehicleSubmitBtn" class="buttons displayNone "
+                        onclick="showPricing()">Submit</button>
                 </form>
             </div>
         </details>
@@ -155,52 +165,80 @@ pricing for parking  -->
             <summary>
                 <h2 class="heading">Pricing</h2>
             </summary>
-            <div class="container">
+            <div class="pricesSection">
                 <div class="pricesContainer">
 
-                    <div class="priceCard">
+                    <div class="priceCard" id="bicycleCard">
                         <div class="priceCardTitle">Cycle</div>
                         <div class="circle">
-                            <span style="font-weight: bold;"> 100 $</span>
+                            <span style="font-weight: bold;"> <span class="value" data-amount="100">100</span> </span>
                             <span style="font-size: 12px;">/month</span>
                         </div>
-                        <div class="pricelist"><span>$5 daily</span>
-                            <span>$100 monthly</span>
-                            <span>$500 yearly</span>
+                        <div class="pricelist"><span><span class="value" data-amount="5">5</span> daily</span>
+                            <span><span class="value" data-amount="100">100</span> monthly</span>
+                            <span><span class="value" data-amount="500">500</span> yearly</span>
                         </div>
                         <button>Purchase now </button>
                     </div>
 
-                    <div class="priceCard">
+                    <div class="priceCard displayNone" id="bikeCard">
                         <div class="priceCardTitle">Motor Cycle</div>
                         <div class="circle">
-                            <span style="font-weight: bold;">200 $</span>
+                            <span style="font-weight: bold;" class="value" data-amount="200">200 </span>
                             <span style="font-size: 12px;">/month</span>
                         </div>
-                        <div class="pricelist"><span>$10 daily</span>
-                            <span>$200 monthly</span>
-                            <span>$1000 yearly</span>
+                        <div class="pricelist"><span><span class="value" data-amount="200">200</span> daily</span>
+                            <span><span class="value" data-amount="200">200</span>monthly</span>
+                            <span><span class="value" data-amount="1000">1000</span> yearly</span>
                         </div>
                         <button>Purchase now </button>
                     </div>
 
-                    <div class="priceCard">
+                    <div class="priceCard displayNone" id="carCard">
                         <div class="priceCardTitle">Four Wheelers</div>
                         <div class="circle">
-                            <span style="font-weight: bold;">500 $</span>
+                            <span style="font-weight: bold;"><span class="value" data-amount="500">500</span></span>
                             <span style="font-size: 12px;">/month</span>
                         </div>
-                        <div class="pricelist"><span>$20 daily</span>
-                            <span>$500 monthly</span>
-                            <span>$3500 yearly</span>
+                        <div class="pricelist"><span><span class="value" data-amount="20">20</span> daily</span>
+                            <span><span class="value" data-amount="500">500</span> monthly</span>
+                            <span><span class="value" data-amount="3500">3500</span> yearly</span>
                         </div>
                         <button>Purchase now </button>
                     </div>
+
+                </div>
+
+                <div class="billContainer" style="display:none;">
+                    <div class="currencyType">
+                        Currency Type :
+                        <div id="currencyRadioContainer">
+                            <input type="radio" name="currency" value="INR" checked>INR
+                            <input type="radio" name="currency" value="USD">USD
+                            <input type="radio" name="currency" value="YEN">YEN
+                        </div>
+                    </div>
+
+                    <div class="amount">
+
+                        TotalBill : <span class="value" id="billValue" data-amount="3500"></span>
+                        <div id="planName"></div>
+                    </div>
+                    <button class="buttons billBtn">Get pass</button>
+                </div>
+                <div class="planContainer">
+                    <p>Select your Plan</p>
+                    <ul class="planOptions">
+                        <li class="option" onclick="getBill('daily')">Daily</li>
+                        <li class="option" onclick="getBill('monthly')">Monthly</li>
+                        <li class="option" onclick="getBill('yearly')">Yearly</li>
+                    </ul>
                 </div>
             </div>
         </details>
     </section>
 
+    <script src="./js/parking.js"></script>
 </body>
 
 </html>

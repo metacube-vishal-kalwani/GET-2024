@@ -1,0 +1,1198 @@
+<!--
+ Assignment 5 - dashboard UI using bootstrap classes and componenents
+ Author : vishal kalwani
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking bootstrap's min.css file -->
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+
+    <!-- linking custom scss file -->
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <!-- linking CDN for icon usage    -->
+    <script src="https://kit.fontawesome.com/59c9982407.js" crossorigin="anonymous"></script>
+
+    <!-- linking CDN for icon usage remix icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css"
+        integrity="sha512-T7lIYojLrqj7eBrV1NvUSZplDBi8mFyIEGFGdox8Bic92Col3GVrscbJkL37AJoDmF2iAh81fRpO4XZukI6kbA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- linking CDN for icon usage mdi -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css"
+        integrity="sha512-/k658G6UsCvbkGRB3vPXpsPHgWeduJwiWGPCGS14IQw3xpr63AEMdA8nMYG2gmYkXitQxDTn6iiK/2fD4T87qA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/script/monochrome/bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css">
+
+
+
+
+
+
+
+
+    <!-- javascript for chartjs's doughtnut chart -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+
+                    data: [
+                        {
+                            type: "doughnut",
+                            innerRadius: 90,  // Makes the doughnut thinner
+                            dataPoints: [
+                                { y: 64, color: "#0acf97" },
+                                { y: 10, color: "#fa5c7c" },
+                                { y: 26, color: "#727cf5" }
+                            ]
+                        }
+                    ]
+                });
+
+            chart.render();
+        }
+
+    </script>
+    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+    <title>dashboard</title>
+</head>
+
+<body>
+
+    <div class="container-fluid body-background">
+        <div class="row  flex-nowrap">
+            <!-- sidebar -->
+
+            <div class="col-auto col-md-3 col-lg-2 bg-dark p-3 z-3 position-sticky top-0" id="#sidebar">
+                <a href="/" class="m-3 mt-5 text-white text-decoration-none">
+                    <img src="https://coderthemes.com/hyper_2/saas/assets/images/logo.png"
+                        class=" d-none d-md-block d-lg-block" alt="logo">
+                    <img src="https://coderthemes.com/hyper_2/saas/assets/images/logo-sm.png"
+                        class="d-md-none d-lg-none" alt="logo">
+                </a>
+
+                <ul class="side-nav">
+
+                    <li class="side-nav-title">Navigation</li>
+
+                    <li class="side-nav-item menuitem-active">
+                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
+                            aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                            <i class="uil-home-alt"></i>
+                            <span class="badge bg-success float-end">5</span>
+                            <span> Dashboards </span>
+
+                        </a>
+                        <div class="collapse" id="sidebarDashboards">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="dashboard-analytics.html">Analytics</a>
+                                </li>
+                                <li class="menuitem-active">
+                                    <a href="index.html" class="active">Ecommerce</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-projects.html">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-crm.html">CRM</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-wallet.html">E-Wallet</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-title">Apps</li>
+
+                    <li class="side-nav-item">
+                        <a href="apps-calendar.html" class="side-nav-link">
+                            <i class="ri-calendar-line"></i>
+                            <span> Calendar </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="apps-chat.html" class="side-nav-link">
+                            <i class="ri-chat-4-line"></i>
+                            <span> Chat </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarCrm" aria-expanded="false" aria-controls="sidebarCrm"
+                            class="side-nav-link">
+                            <i class="ri-speed-up-fill"></i>
+                            <span class="badge bg-danger text-white float-end">New</span>
+                            <span> CRM </span>
+                        </a>
+                        <div class="collapse" id="sidebarCrm">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="crm-projects.html">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="crm-orders-list.html">Orders List</a>
+                                </li>
+                                <li>
+                                    <a href="crm-clients.html">Clients</a>
+                                </li>
+                                <li>
+                                    <a href="crm-management.html">Management</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false"
+                            aria-controls="sidebarEcommerce" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Ecommerce </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarEcommerce">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="apps-ecommerce-products.html">Products</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-products-details.html">Products Details</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-orders.html">Orders</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-orders-details.html">Order Details</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-customers.html">Customers</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-shopping-cart.html">Shopping Cart</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-checkout.html">Checkout</a>
+                                </li>
+                                <li>
+                                    <a href="apps-ecommerce-sellers.html">Sellers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
+                            aria-controls="sidebarEmail" class="side-nav-link">
+                            <i class="uil-envelope"></i>
+                            <span> Email </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarEmail">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="apps-email-inbox.html">Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="apps-email-read.html">Read Email</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false"
+                            aria-controls="sidebarProjects" class="side-nav-link">
+                            <i class="uil-briefcase"></i>
+                            <span> Projects </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarProjects">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="apps-projects-list.html">List</a>
+                                </li>
+                                <li>
+                                    <a href="apps-projects-details.html">Details</a>
+                                </li>
+                                <li>
+                                    <a href="apps-projects-gantt.html">Gantt <span
+                                            class="badge rounded-pill bg-light text-dark font-10 float-end">New</span></a>
+                                </li>
+                                <li>
+                                    <a href="apps-projects-add.html">Create Project</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="apps-social-feed.html" class="side-nav-link">
+                            <i class="uil-rss"></i>
+                            <span> Social Feed </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarTasks" aria-expanded="false"
+                            aria-controls="sidebarTasks" class="side-nav-link">
+                            <i class="uil-clipboard-alt"></i>
+                            <span> Tasks </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarTasks">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="apps-tasks.html">List</a>
+                                </li>
+                                <li>
+                                    <a href="apps-tasks-details.html">Details</a>
+                                </li>
+                                <li>
+                                    <a href="apps-kanban.html">Kanban Board</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="apps-file-manager.html" class="side-nav-link">
+                            <i class="uil-folder-plus"></i>
+                            <span> File Manager </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-title">Custom</li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false"
+                            aria-controls="sidebarPages" class="side-nav-link">
+                            <i class="uil-copy-alt"></i>
+                            <span> Pages </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarPages">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="pages-profile.html">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="pages-profile-2.html">Profile 2</a>
+                                </li>
+                                <li>
+                                    <a href="pages-invoice.html">Invoice</a>
+                                </li>
+                                <li>
+                                    <a href="pages-faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="pages-pricing.html">Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="pages-maintenance.html">Maintenance</a>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false"
+                                        aria-controls="sidebarPagesAuth">
+                                        <span> Authentication </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <div class="collapse" id="sidebarPagesAuth">
+                                        <ul class="side-nav-third-level">
+                                            <li>
+                                                <a href="pages-login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-login-2.html">Login 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-register.html">Register</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-register-2.html">Register 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-logout.html">Logout</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-logout-2.html">Logout 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-recoverpw.html">Recover Password</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-recoverpw-2.html">Recover Password 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-lock-screen.html">Lock Screen</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-lock-screen-2.html">Lock Screen 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-confirm-mail.html">Confirm Mail</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-confirm-mail-2.html">Confirm Mail 2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a data-bs-toggle="collapse" href="#sidebarPagesError" aria-expanded="false"
+                                        aria-controls="sidebarPagesError">
+                                        <span> Error </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <div class="collapse" id="sidebarPagesError">
+                                        <ul class="side-nav-third-level">
+                                            <li>
+                                                <a href="pages-404.html">Error 404</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-404-alt.html">Error 404-alt</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-500.html">Error 500</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="pages-starter.html">Starter Page</a>
+                                </li>
+                                <li>
+                                    <a href="pages-preloader.html">With Preloader</a>
+                                </li>
+                                <li>
+                                    <a href="pages-timeline.html">Timeline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="landing.html" target="_blank" class="side-nav-link">
+                            <i class="uil-globe"></i>
+                            <span class="badge text-bg-secondary float-end">New</span>
+                            <span> Landing </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarLayouts" aria-expanded="false"
+                            aria-controls="sidebarLayouts" class="side-nav-link">
+                            <i class="uil-window"></i>
+                            <span> Layouts </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarLayouts">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="layouts-horizontal.html" target="_blank">Horizontal</a>
+                                </li>
+                                <li>
+                                    <a href="layouts-detached.html" target="_blank">Detached</a>
+                                </li>
+                                <li>
+                                    <a href="layouts-full.html" target="_blank">Full View</a>
+                                </li>
+                                <li>
+                                    <a href="layouts-fullscreen.html" target="_blank">Fullscreen View</a>
+                                </li>
+                                <li>
+                                    <a href="layouts-hover.html" target="_blank">Hover Menu</a>
+                                </li>
+                                <li>
+                                    <a href="layouts-compact.html" target="_blank">Compact</a>
+                                </li>
+                                <li>
+                                    <a href="layouts-icon-view.html" target="_blank">Icon View</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-title">Components</li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false"
+                            aria-controls="sidebarBaseUI" class="side-nav-link">
+                            <i class="uil-box"></i>
+                            <span> Base UI </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarBaseUI">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="ui-accordions.html">Accordions &amp; Collapse</a>
+                                </li>
+                                <li>
+                                    <a href="ui-alerts.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="ui-avatars.html">Avatars</a>
+                                </li>
+                                <li>
+                                    <a href="ui-badges.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="ui-breadcrumb.html">Breadcrumb</a>
+                                </li>
+                                <li>
+                                    <a href="ui-buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="ui-cards.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="ui-carousel.html">Carousel</a>
+                                </li>
+                                <li>
+                                    <a href="ui-dropdowns.html">Dropdowns</a>
+                                </li>
+                                <li>
+                                    <a href="ui-embed-video.html">Embed Video</a>
+                                </li>
+                                <li>
+                                    <a href="ui-grid.html">Grid</a>
+                                </li>
+                                <li>
+                                    <a href="ui-list-group.html">List Group</a>
+                                </li>
+                                <li>
+                                    <a href="ui-modals.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="ui-notifications.html">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="ui-offcanvas.html">Offcanvas</a>
+                                </li>
+                                <li>
+                                    <a href="ui-placeholders.html">Placeholders</a>
+                                </li>
+                                <li>
+                                    <a href="ui-pagination.html">Pagination</a>
+                                </li>
+                                <li>
+                                    <a href="ui-popovers.html">Popovers</a>
+                                </li>
+                                <li>
+                                    <a href="ui-progress.html">Progress</a>
+                                </li>
+                                <li>
+                                    <a href="ui-ribbons.html">Ribbons</a>
+                                </li>
+                                <li>
+                                    <a href="ui-spinners.html">Spinners</a>
+                                </li>
+                                <li>
+                                    <a href="ui-tabs.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="ui-tooltips.html">Tooltips</a>
+                                </li>
+                                <li>
+                                    <a href="ui-links.html">Links</a>
+                                </li>
+                                <li>
+                                    <a href="ui-typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="ui-utilities.html">Utilities</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarExtendedUI" aria-expanded="false"
+                            aria-controls="sidebarExtendedUI" class="side-nav-link">
+                            <i class="uil-package"></i>
+                            <span> Extended UI </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarExtendedUI">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="extended-dragula.html">Dragula</a>
+                                </li>
+                                <li>
+                                    <a href="extended-range-slider.html">Range Slider</a>
+                                </li>
+                                <li>
+                                    <a href="extended-ratings.html">Ratings</a>
+                                </li>
+                                <li>
+                                    <a href="extended-scrollbar.html">Scrollbar</a>
+                                </li>
+                                <li>
+                                    <a href="extended-scrollspy.html">Scrollspy</a>
+                                </li>
+                                <li>
+                                    <a href="extended-treeview.html">Treeview</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="widgets.html" class="side-nav-link">
+                            <i class="uil-layer-group"></i>
+                            <span> Widgets </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false"
+                            aria-controls="sidebarIcons" class="side-nav-link">
+                            <i class="uil-streering"></i>
+                            <span> Icons </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarIcons">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="icons-remixicons.html">Remix Icons</a>
+                                </li>
+                                <li>
+                                    <a href="icons-mdi.html">Material Design</a>
+                                </li>
+                                <li>
+                                    <a href="icons-unicons.html">Unicons</a>
+                                </li>
+                                <li>
+                                    <a href="icons-lucide.html">Lucide</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarCharts" aria-expanded="false"
+                            aria-controls="sidebarCharts" class="side-nav-link">
+                            <i class="uil-chart"></i>
+                            <span> Charts </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarCharts">
+                            <ul class="side-nav-second-level">
+                                <li class="side-nav-item">
+                                    <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false"
+                                        aria-controls="sidebarApexCharts">
+                                        <span> Apex Charts </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <div class="collapse" id="sidebarApexCharts">
+                                        <ul class="side-nav-third-level">
+                                            <li>
+                                                <a href="charts-apex-area.html">Area</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-bar.html">Bar</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-bubble.html">Bubble</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-candlestick.html">Candlestick</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-column.html">Column</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-heatmap.html">Heatmap</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-line.html">Line</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-mixed.html">Mixed</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-timeline.html">Timeline</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-boxplot.html">Boxplot</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-treemap.html">Treemap</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-pie.html">Pie</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-radar.html">Radar</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-radialbar.html">RadialBar</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-scatter.html">Scatter</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-polar-area.html">Polar Area</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-apex-sparklines.html">Sparklines</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a data-bs-toggle="collapse" href="#sidebarChartJSCharts" aria-expanded="false"
+                                        aria-controls="sidebarChartJSCharts">
+                                        <span> ChartJS </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <div class="collapse" id="sidebarChartJSCharts">
+                                        <ul class="side-nav-third-level">
+                                            <li>
+                                                <a href="charts-chartjs-area.html">Area</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-chartjs-bar.html">Bar</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-chartjs-line.html">Line</a>
+                                            </li>
+                                            <li>
+                                                <a href="charts-chartjs-other.html">Other</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="charts-brite.html">Britecharts</a>
+                                </li>
+                                <li>
+                                    <a href="charts-sparkline.html">Sparklines</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false"
+                            aria-controls="sidebarForms" class="side-nav-link">
+                            <i class="uil-document-layout-center"></i>
+                            <span> Forms </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarForms">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="form-elements.html">Basic Elements</a>
+                                </li>
+                                <li>
+                                    <a href="form-advanced.html">Form Advanced</a>
+                                </li>
+                                <li>
+                                    <a href="form-validation.html">Validation</a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard.html">Wizard</a>
+                                </li>
+                                <li>
+                                    <a href="form-fileuploads.html">File Uploads</a>
+                                </li>
+                                <li>
+                                    <a href="form-editors.html">Editors</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false"
+                            aria-controls="sidebarTables" class="side-nav-link">
+                            <i class="uil-table"></i>
+                            <span> Tables </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarTables">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="tables-basic.html">Basic Tables</a>
+                                </li>
+                                <li>
+                                    <a href="tables-datatable.html">Data Tables</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false"
+                            aria-controls="sidebarMaps" class="side-nav-link">
+                            <i class="uil-location-point"></i>
+                            <span> Maps </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarMaps">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="maps-google.html">Google Maps</a>
+                                </li>
+                                <li>
+                                    <a href="maps-vector.html">Vector Maps</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false"
+                            aria-controls="sidebarMultiLevel" class="side-nav-link">
+                            <i class="uil-folder-plus"></i>
+                            <span> Multi Level </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarMultiLevel">
+                            <ul class="side-nav-second-level">
+                                <li class="side-nav-item">
+                                    <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false"
+                                        aria-controls="sidebarSecondLevel">
+                                        <span> Second Level </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <div class="collapse" id="sidebarSecondLevel">
+                                        <ul class="side-nav-third-level">
+                                            <li>
+                                                <a href="javascript: void(0);">Item 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);">Item 2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false"
+                                        aria-controls="sidebarThirdLevel">
+                                        <span> Third Level </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <div class="collapse" id="sidebarThirdLevel">
+                                        <ul class="side-nav-third-level">
+                                            <li>
+                                                <a href="javascript: void(0);">Item 1</a>
+                                            </li>
+                                            <li class="side-nav-item">
+                                                <a data-bs-toggle="collapse" href="#sidebarFourthLevel"
+                                                    aria-expanded="false" aria-controls="sidebarFourthLevel">
+                                                    <span> Item 2 </span>
+                                                    <span class="menu-arrow"></span>
+                                                </a>
+                                                <div class="collapse" id="sidebarFourthLevel">
+                                                    <ul class="side-nav-forth-level">
+                                                        <li>
+                                                            <a href="javascript: void(0);">Item 2.1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);">Item 2.2</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col">
+
+                <!-- topbar -->
+                <div class="row nav p-3 bg-white shadow d-flex flex-wrap align-items-center position-sticky top-0 z-3 ">
+                    <div class="nav-item col-auto" id="hamburger">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <!-- search-box  -->
+                    <div class="nav-item col-4">
+                        <form class="d-flex" role="search">
+                            <input class="form-control rounded-0 bg-secondary-subtle rounded-start-1" type="search"
+                                placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-primary rounded-0 bg-primary text-white rounded-end-1"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <div class=" nav-item col-5">
+                        <ul class="d-flex flex-wrap gap-3 justify-content-end align-items-center list-unstyled mb-0">
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img src="https://coderthemes.com/hyper_2/saas/assets/images/flags/us.jpg"
+                                            alt="" width="20px" height="20px">
+                                        <p class="d-none d-md-inline d-lg-inline ">English</p>
+                                    </button>
+                                    <ul class="dropdown-menu border-0 border-top mt-3 shadow">
+                                        <li> <a href="javascript:void(0);" class="dropdown-item">
+                                                <img src="https://coderthemes.com/hyper_2/saas/assets/images/flags/germany.jpg"
+                                                    alt="user-image" class="me-1" height="12"> <span
+                                                    class="align-middle">German</span>
+                                            </a>
+                                        </li>
+
+                                        <!-- item-->
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                <img src="https://coderthemes.com/hyper_2/saas/assets/images/flags/italy.jpg"
+                                                    alt="user-image" class="me-1" height="12"> <span
+                                                    class="align-middle">Italian</span>
+                                            </a>
+                                        </li>
+
+                                        <!-- item-->
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                <img src="https://coderthemes.com/hyper_2/saas/assets/images/flags/italy.jpg"
+                                                    alt="user-image" class="me-1" height="12"> <span
+                                                    class="align-middle">Spanish</span>
+                                            </a>
+                                        </li>
+
+                                        <!-- item-->
+                                        <li>
+                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                <img src="https://coderthemes.com/hyper_2/saas/assets/images/flags/russia.jpg"
+                                                    alt="user-image" class="me-1" height="12"> <span
+                                                    class="align-middle">Russian</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-notification-3-line font-22 icons"></i>
+                            </li>
+                            <li><i class="ri-apps-2-line icons"></i></li>
+                            <li><i class="ri-settings-3-line font-22 icons"></i></li>
+                            <li> <i class="ri-moon-line font-22 icons"></i></li>
+                            <li><i class="ri-fullscreen-line font-22 icons"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="d-none d-md-flex d-lg-flex flex-row gap-1 align-items-center">
+                            <img src="https://coderthemes.com/hyper_2/saas/assets/images/users/avatar-1.jpg"
+                                class="rounded-circle" width="40px" alt="">
+                            <div class="d-flex flex-column justify-content-center">
+                                <p class="fw-bold pb-0 mb-0">Dominic Keller</p>
+                                <small>Founder</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row m-3">
+                    <div class="row mt-3">
+                        <!-- hamburger -->
+                        <div class="col">
+                            <h4 class="text-secondary">Projects</h4>
+                        </div>
+
+                        <div class="col d-flex justify-content-end">
+                            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                                aria-label="breadcrumb">
+                                <ol class="breadcrumb list-unstyled">
+                                    <li class="breadcrumb-item "><a href="#">Hypex</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                    <li class="breadcrumb-item" aria-current="page">Projects</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="row g-0 shadow mt-3">
+                        <div class="col-12 d-flex">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card rounded-0 shadow-none m-0">
+                                    <div class="card-body text-center py-4">
+                                        <i class="ri-briefcase-line text-muted font-24"></i>
+                                        <h3><span>29</span></h3>
+
+                                        <p class="text-muted font-15 mb-0">Total Projects</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card rounded-0 shadow-none m-0 border-start border-light">
+                                    <div class="card-body text-center py-4">
+                                        <i class="ri-list-check-2 text-muted font-24"></i>
+                                        <h3><span>715</span></h3>
+                                        <p class="text-muted font-15 mb-0">Total Tasks</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card rounded-0 shadow-none m-0 border-start border-light">
+                                    <div class="card-body text-center py-4">
+                                        <i class="ri-group-line text-muted font-24"></i>
+                                        <h3><span>31</span></h3>
+                                        <p class="text-muted font-15 mb-0">Members</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card rounded-0 shadow-none m-0 border-start border-light">
+                                    <div class="card-body text-center py-4">
+                                        <i class="ri-line-chart-line text-muted font-24"></i>
+                                        <h3><span>93%</span> <i class="mdi mdi-arrow-up text-success"></i></h3>
+                                        <p class="text-muted font-15 mb-0">Productivity</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row gx-0  mt-5 ">
+                        <div class="col-12 col-md-4 col-lg-4 p-0 m-0">
+                            <div class="card d-flex flex-column gap-2 p-3 shadow">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="fw-semibold text-muted mb-0">PROJECT STATUS</p>
+                                    <i class="ri-more-2-fill"></i>
+                                </div>
+
+                                <!-- doughnut chart -->
+                                <div id="chartContainer" style="height: 280px; width: 100%;">
+                                </div>
+                                <div class="d-flex m-0 p-0 align-items-center justify-content-between">
+                                    <div class="d-flex justify-content-center flex-column align-items-center">
+                                        <i class="mdi mdi-trending-up text-success mt-3 h3"></i>
+                                        <h4 class="mb-0 fw-semibold text-muted ">64%</h4>
+                                        <p class="text-muted">completed</p>
+                                    </div>
+                                    <div class="d-flex justify-content-center flex-column align-items-center">
+                                        <i class="mdi mdi-trending-down text-primary mt-3 h3"></i>
+                                        <h4 class="mb-0 fw-semibold text-muted">26%</h4>
+                                        <p class="text-muted">Inprogress</p>
+                                    </div>
+                                    <div class="d-flex justify-content-center flex-column align-items-center">
+                                        <i class="mdi mdi-trending-down text-danger mt-3 h3"></i>
+                                        <h4 class="mb-0 fw-semibold text-muted">10%</h4>
+                                        <p class="text-muted">Behind</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 p-0 m-0 ">
+                            <div class="card d-flex flex-column gap-3  ms-3 shadow ">
+                                <div class="d-flex justify-content-between align-items-center m-4">
+                                    <p class="fw-semibold text-muted mb-0">TASKS</p>
+                                    <i class="ri-more-2-fill"></i>
+                                </div>
+                                <p class="border-top border-bottom m-0 p-2 text-center bg-light">
+                                    <strong>107</strong> Tasks
+                                    completed out of
+                                    195
+                                </p>
+
+                                <!-- Start of table  -->
+
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-nowrap table-hover mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p class="font-14 my-1"><a href="javascript:void(0);"
+                                                            class="text-body text-decoration-none fw-bold text-muted">Coffee
+                                                            detail
+                                                            page -
+                                                            Main Page</a></p>
+                                                    <span class="text-muted font-13">Due in 3 days</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Status</span> <br />
+                                                    <span class="badge badge-warning-lighten">In-progress</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Assigned to</span>
+                                                    <p class="font-14 mt-1 fw-normal">Logan R. Cohn</p>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Total time spend</span>
+                                                    <p class="font-14 mt-1 fw-normal">3h 20min</p>
+                                                </td>
+                                                <td class="table-action" style="width: 90px;">
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-pencil"></i></a>
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="font-14 my-1"><a href="javascript:void(0);"
+                                                            class="text-body text-decoration-none fw-bold text-muted">Drinking
+                                                            bottle graphics</a></p>
+                                                    <span class="text-muted font-13">Due in 27 days</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Status</span> <br />
+                                                    <span class="badge badge-danger-lighten">Outdated</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Assigned to</span>
+                                                    <p class="font-14 mt-1 fw-normal">Jerry F. Powell</p>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Total time spend</span>
+                                                    <p class="font-14 mt-1 fw-normal">12h 21min</p>
+                                                </td>
+                                                <td class="table-action" style="width: 90px;">
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-pencil"></i></a>
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="font-14 my-1"><a href="javascript:void(0);"
+                                                            class="text-body text-decoration-none fw-bold text-muted">App
+                                                            design and development</a></p>
+                                                    <span class="text-muted font-13">Due in 7 days</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Status</span> <br />
+                                                    <span class="badge badge-success-lighten">Completed</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Assigned to</span>
+                                                    <p class="font-14 mt-1 fw-normal">Scot M. Smith</p>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Total time spend</span>
+                                                    <p class="font-14 mt-1 fw-normal">78h 05min</p>
+                                                </td>
+                                                <td class="table-action" style="width: 90px;">
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-pencil"></i></a>
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="font-14 my-1"><a href="javascript:void(0);"
+                                                            class="text-body text-decoration-none fw-bold text-muted">Poster
+                                                            illustation design</a></p>
+                                                    <span class="text-muted font-13">Due in 5 days</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Status</span> <br />
+                                                    <span class="badge badge-warning-lighten">In-progress</span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Assigned to</span>
+                                                    <p class="font-14 mt-1 fw-normal">John P. Ritter</p>
+                                                </td>
+                                                <td>
+                                                    <span class="text-muted font-13">Total time spend</span>
+                                                    <p class="font-14 mt-1 fw-normal">26h 58min</p>
+                                                </td>
+                                                <td class="table-action" style="width: 90px;">
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-pencil"></i></a>
+                                                    <a href="javascript: void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- End of table  -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" card col-12 mt-3 shadow">
+                        <div class="row d-flex m-3 justify-content-between">
+                            <div class="col-3">
+                                <p class="mb-0 text-muted fw-bold fs-4">TASKS</p>
+                            </div>
+                            <div class="col-4 d-flex flex-row-reverse gap-3">
+                                <button class="btn bg-body-tertiary text-secondary px-3">All</button>
+                                <button class="btn bg-body-tertiary text-secondary px-3">1M</button>
+                                <button class=" btn bg-body-tertiary text-secondary px-3">6M</button>
+                                <button class="btn  bg-body-tertiary text-secondary px-3">1Y</button>
+                            </div>
+                            <div class="card-body">
+                                <div dir="ltr">
+                                    <div class="chartjs-chart" style="height: 320px;">
+                                        <canvas id="task-area-chart" data-bgColor="#727cf5"
+                                            data-borderColor="#727cf5"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <footer class="footer mt-3">
+                        <div class="container-fluid">
+                            <div class="row border-top border-bottom py-3">
+                                <div class="col-md-6">
+                                    2024 © Hyper - Coderthemes.com
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-md-end footer-links d-none d-md-block">
+                                        <a href="#">About</a>
+                                        <a href="#">Support</a>
+                                        <a href="#">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="
+https://cdn.jsdelivr.net/npm/badge-list@1.0.1/src/index.min.js
+"></script>
+
+
+</body>
+
+</html>

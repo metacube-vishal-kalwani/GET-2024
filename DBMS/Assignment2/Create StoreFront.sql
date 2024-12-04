@@ -18,9 +18,9 @@ CREATE TABLE Product
 (product_id varchar(20) PRIMARY KEY,
 product_name varchar(50),
 price INT,
-quantity INT,
+quantity INT DEFAULT 0,
 category_id varchar(20),
-FOREIGN KEY (category_id) REFERENCE Category(category_id)
+FOREIGN KEY (category_id) REFERENCES Category(category_id) ON DELETE CASCADE
 );
 
 
@@ -28,10 +28,7 @@ CREATE TABLE
 ProductCategory
 (Product_id varchar(20),
 category_id varchar(20),
-FOREIGN KEY 
-	(product_id) 
-REFERENCES 
-	product(product_id) ON DELETE CASCADE,
+FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE,
 FOREIGN KEY 
 	(category_id) REFERENCES Category(category_id) ON DELETE CASCADE
 );
@@ -43,8 +40,7 @@ CREATE TABLE
 	img_id varchar(20) PRIMARY KEY,
 	img_url VARCHAR(50) NOT NULL,
 	product_id VARCHAR(20),
-FOREIGN KEY 
-	(product_id) REFERENCES product(product_id)
+FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
 
 
