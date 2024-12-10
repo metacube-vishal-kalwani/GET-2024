@@ -1,0 +1,17 @@
+.FormContainer {
+    padding-left: 20px;
+
+    .Form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input,
+        textarea,
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid grey;
+        }
+    }
+}

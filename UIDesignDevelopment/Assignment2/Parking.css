@@ -90,6 +90,7 @@ summary{
     margin-top: 10px;
     border: 2px solid rgb(6, 0, 121);
     border-radius: 8px ;
+    min-height: 50vh;
 }
 
 /* stylings for forms */
@@ -105,6 +106,10 @@ form{
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
+}
+
+#vehicle form{
+    width: 50%;
 }
 
 form label{

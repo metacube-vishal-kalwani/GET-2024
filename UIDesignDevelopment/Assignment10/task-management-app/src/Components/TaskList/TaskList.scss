@@ -1,0 +1,15 @@
+.btnText {
+    font-size: 0.8em !important;
+}
+
+.taskCard {
+    display: flex;
+    // align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    // font-size: 14px;
+    border-radius: 4px;
+    font-weight: 500;
+    height: 100px;
+
+}

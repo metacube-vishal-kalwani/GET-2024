@@ -6,7 +6,8 @@
         empPassword: "",
         empEmail: "",
         empContact: "",
-        empGender: ""
+        empGender: "",
+        empId: ""
     }
 
     // object of vehicle's details
@@ -16,7 +17,6 @@
         vehicleType: "",
         vehicleNumber: "",
         empId: "",
-        identification: ""
     }
 
     // pricing for all type of vehicle
@@ -45,6 +45,10 @@
     const CONTACT_REGEX = RegExp("^\\d{10}$");
     const EMAIL_REGEX = RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+[.]+[a-zA-Z0-9-.]+$");
 
+    // elements of employee and vehicle's section
+    const empSection = document.querySelector('#employee details');
+    const vehicleSection = document.querySelector('#vehicle details');
+
     let registrationNo = 0;
 
     /**
@@ -57,17 +61,15 @@
         switch (fieldName) {
             case "empName":
                 return {
-                    status: NAME_REGEX.test(value),
+                    status: NAME_REGEX.test(value.trim()),
                     message: "Name should not contain special characters and length > 3"
                 }
 
-            // Name cannot be empty and length greater than 3
             case "empPassword":
                 return {
                     status: PASSWORD_REGEX.test(value),
                     message: "At least one letter, one number, one special character, and minimum 8 characters"
                 }
-            // Password must be at least 6 characters
             case "empEmail":
                 return {
                     status: EMAIL_REGEX.test(value),
@@ -103,7 +105,6 @@
      */
     function getEmpDetails() {
         registrationNo++;
-
         // creating registration Id
         let registrationId = `MetaId${registrationNo}`;
 
@@ -111,13 +112,10 @@
         const empForm = document.querySelectorAll('#employeeForm label');
 
         // to keep the details tag expended
-        const empSection = document.querySelector('#employee details');
         empSection.setAttribute('open', 'true');
 
-        // Showing the very first field
         let currentFieldIndex = 0;
         empForm[currentFieldIndex].classList.add('displayBlock');
-
 
         function handleKeydown(event) {
             if (event.key === "Enter") {
@@ -130,6 +128,8 @@
 
                 let inputName = inputElement.name;
                 let inputValue
+
+                // getting value from radio input 
                 if (inputElement.type === 'radio') {
                     const selectedRadio = currentElement.querySelector('input[type="radio"]:checked');
                     inputValue = selectedRadio ? selectedRadio.value : "";
@@ -151,29 +151,32 @@
                     currentFieldIndex++;
                     if (currentFieldIndex < empForm.length) {
                         empForm[currentFieldIndex].classList.add('displayBlock');
+
                     } else {
                         console.log("Employee Details:", empDetails);
-                        empSection.querySelector('.titleName').innerHTML = `Registration Id : ${registrationId} `;
+                        empSection.querySelector('summary h2').innerHTML = `Registration Id : ${registrationId} `;
+                        empDetails['empId'] = registrationId;
                         document.getElementById('empFormSubmitBtn').classList.add('showButton');
                         document.removeEventListener('keydown', handleKeydown); // Remove listener
-
                     }
-                } else if (verifyResult.status == false) {
 
+                } else if (verifyResult.status == false) {
                     document.querySelector('.error').classList.add('displayBlock')
                     document.querySelector('.error').innerHTML = verifyResult.message;
-
-
                     inputElement.focus(); // Focus back on the invalid field
                 }
-
-
-                if (empDetails.empName != "" && !empSection.querySelector('.titleName').innerHTML.includes(registrationId)) {
-                    empSection.querySelector('.titleName').innerHTML = "Hi! " + empDetails.empName + " Add more details"
+                if (empDetails.empName !== "") {
+                    empSection.querySelector('.titleName').innerHTML = "Hi! " + empDetails.empName + ` Add your ${empForm[currentFieldIndex].firstChild.textContent}`
                 }
+
+                if (currentFieldIndex === empForm.length - 1) {
+                    empSection.querySelector('.titleName').innerHTML = "";
+                }
+
             }
         };
 
+        // attaching handleKeydown function to keydown event
         document.addEventListener('keydown', handleKeydown)
     };
 
@@ -183,9 +186,8 @@
 
     function getVehicleDetails() {
         const vehicleForm = document.querySelectorAll('#vehicleForm label');
-        const vehicleSection = document.querySelector('#vehicle details');
         vehicleSection.setAttribute('open', 'true');
-
+        empSection.removeAttribute('open', 'true');
         let currentElementIndex = 0;
 
         // Show the first label
@@ -195,9 +197,7 @@
             if (event.key === "Enter") {
                 event.preventDefault();
                 const currentElement = vehicleForm[currentElementIndex];
-
                 const inputElement = currentElement.querySelector('input');
-
                 if (!inputElement) return; // Skip if no input found
 
                 let inputName = inputElement.name;
@@ -209,8 +209,8 @@
                     inputValue = inputElement.value;
                 }
 
-                vehicleDetails[inputName] = inputValue;
 
+                vehicleDetails[inputName] = inputValue;
                 currentElement.classList.remove('displayBlock');
 
                 currentElementIndex++;
@@ -238,7 +238,7 @@
             if (passwordText.length > 12) {
                 textField.style.borderColor = "green"
             } else {
-                textField.style.borderColor = "yellow"
+                textField.style.borderColor = "orange"
             }
         } else {
             textField.style.borderColor = "red"
@@ -252,8 +252,8 @@
      */
     function showPricing() {
         const pricingSection = document.querySelector('#prices details')
-        pricingSection.setAttribute('open', 'true')
-
+        pricingSection.setAttribute('open', 'true');
+        vehicleSection.removeAttribute('open', 'true');
         // const priceCard = document.querySelector(`#${vehicleDetails.vehicleType} card`);
         const priceCard = document.querySelector(`#${vehicleDetails.vehicleType}Card`);
         console.log(priceCard);
@@ -306,7 +306,7 @@
 
 
     // adding an event listner to radio button of currency change
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function () {
         const radioContainer = document.getElementById("currencyRadioContainer");
         const valueSpans = document.querySelectorAll(".value");
 
@@ -327,4 +327,5 @@
 
     // Call the function
     getEmpDetails();
+
 }

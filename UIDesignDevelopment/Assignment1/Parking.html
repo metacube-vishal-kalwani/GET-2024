@@ -18,6 +18,7 @@ pricing for parking  -->
 </head>
 
 <body>
+
     <!-- navigation and cover image -->
     <header>
         <div class="topBar">
@@ -74,7 +75,7 @@ pricing for parking  -->
 
                     <label for="empPassword">Password
                         <input type="password" id="empPassword" name="empPassword" class="inputFields" required
-                            placeholder="Enter Password" onkeydown="verifyPassword()">
+                            placeholder="Enter Password" oninput="verifyPassword()">
                     </label>
 
                     <label for="confirmPassword">Confirm password
@@ -110,8 +111,8 @@ pricing for parking  -->
                         <input type="text" id="vehicleModel" class="inputFields" name="vehicleModel"
                             placeholder="Enter vehicle Model">
                     </label>
-                    <label for="vehicleType">Type
-                        <span class="radioContainer">
+                    <label for="vehicleType">Which vehicle do you have
+                        <span class="radioContainer" style="font-weight: normal; font-size: 14px;">
                             <input type="radio" id="vehicleType" value="bicycle" name="vehicleType">Bicycle
                             <input type="radio" id="vehicleType" value="bike" name="vehicleType">Motor cycle
                             <input type="radio" id="vehicleType" value="car" name="vehicleType">Four Wheeler
@@ -123,7 +124,8 @@ pricing for parking  -->
                             placeholder="RJ01TS2343">
                     </label>
                     <label for="employeeId">Employee Id
-                        <input type="text" name="empId" id="employeeId" class="inputFields" placeholder="G24/2354">
+                        <input type="text" name="empId" id="employeeId" class="inputFields" placeholder="MetaId00">
+                        <div class="error"></div>
                     </label>
                     <!-- <label for="identification">Identification
                         <textarea name="identification" class="textarea" id="identification" cols="35" rows="10"
@@ -168,7 +170,7 @@ pricing for parking  -->
             <div class="pricesSection">
                 <div class="pricesContainer">
 
-                    <div class="priceCard" id="bicycleCard">
+                    <div class="priceCard displayNone" id="bicycleCard">
                         <div class="priceCardTitle">Cycle</div>
                         <div class="circle">
                             <span style="font-weight: bold;"> <span class="value" data-amount="100">100</span> </span>
@@ -178,7 +180,6 @@ pricing for parking  -->
                             <span><span class="value" data-amount="100">100</span> monthly</span>
                             <span><span class="value" data-amount="500">500</span> yearly</span>
                         </div>
-                        <button>Purchase now </button>
                     </div>
 
                     <div class="priceCard displayNone" id="bikeCard">
@@ -187,11 +188,10 @@ pricing for parking  -->
                             <span style="font-weight: bold;" class="value" data-amount="200">200 </span>
                             <span style="font-size: 12px;">/month</span>
                         </div>
-                        <div class="pricelist"><span><span class="value" data-amount="200">200</span> daily</span>
+                        <div class="pricelist"><span><span class="value" data-amount="10">10</span> daily</span>
                             <span><span class="value" data-amount="200">200</span>monthly</span>
                             <span><span class="value" data-amount="1000">1000</span> yearly</span>
                         </div>
-                        <button>Purchase now </button>
                     </div>
 
                     <div class="priceCard displayNone" id="carCard">
@@ -204,7 +204,6 @@ pricing for parking  -->
                             <span><span class="value" data-amount="500">500</span> monthly</span>
                             <span><span class="value" data-amount="3500">3500</span> yearly</span>
                         </div>
-                        <button>Purchase now </button>
                     </div>
 
                 </div>
@@ -237,8 +236,9 @@ pricing for parking  -->
             </div>
         </details>
     </section>
-
-    <script src="./js/parking.js"></script>
+    <!-- <script src="./js/parking.js"></script> -->
+    <script type="module" src="../Assignment9/ts/js/parking.js"></script>
 </body>
+
 
 </html>
